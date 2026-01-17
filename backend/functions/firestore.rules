@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isFaculty() {
+      return isAuthenticated() && 
+             get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'faculty';
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId);
+    }
+    
+    // Behavioral profiles - only owner can read/write
+    match /behavioral_profiles/{userId} {
+      allow read: if isOwner(userId) || isFaculty();
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if false; // Profiles shouldn't be deleted
+    }
+    
+    // Attendance records
+    match /attendance_records/{recordId} {
+      allow read: if isAuthenticated() && 
+                    (resource.data.userId == request.auth.uid || isFaculty());
+      allow create: if isAuthenticated();
+      allow update: if isFaculty(); // Only faculty can flag/unflag
+      allow delete: if false; // Records shouldn't be deleted
+    }
+    
+    // Attendance sessions - faculty only
+    match /sessions/{sessionId} {
+      allow read: if isAuthenticated();
+      allow write: if isFaculty();
+    }
+    
+    // Courses
+    match /courses/{courseId} {
+      allow read: if isAuthenticated();
+      allow write: if isFaculty();
+    }
+  }
+}

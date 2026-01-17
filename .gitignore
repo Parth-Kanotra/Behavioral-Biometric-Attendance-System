@@ -1,0 +1,29 @@
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+
+# Firebase
+.firebase/
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log
+
+# Environment variables
+.env
+.env.*
+
+# Python / ML
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Docker
+logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
