@@ -8,7 +8,7 @@ Secure, fraud-proof attendance verification using behavioral biometrics and typi
 
 ---
 
-## 🔗 Table of Contents
+##  Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -22,7 +22,7 @@ Secure, fraud-proof attendance verification using behavioral biometrics and typi
 
 ---
 
-## 🔗 Overview
+##  Overview
 
 BBAS (Behavioral Biometric Attendance System) uses **behavioral biometrics** to verify student identity through unique patterns like typing rhythm, keystroke dynamics, and mouse movements. These traits are as unique as fingerprints but **impossible to share or replicate** - eliminating proxy attendance.
 
@@ -38,7 +38,7 @@ Traditional attendance systems face critical challenges:
 BBAS uses advanced machine learning algorithms to create a unique 128-dimensional behavioral signature for each user. During attendance verification, the system compares current behavior against the enrolled profile with **85% accuracy threshold**, ensuring only the actual user can mark attendance.
 
 ---
-## 🔗 Features
+##  Features
 
 ### For Students
 - **Quick Enrollment** - 30-second process capturing 150+ data points
@@ -59,7 +59,7 @@ BBAS uses advanced machine learning algorithms to create a unique 128-dimensiona
 - **Role-Based Access** - Granular permissions
 ---
 
-## 🔗 Tech Stack
+##  Tech Stack
 
 ### Frontend
 - **React 18** - Modern UI library with hooks and context
@@ -86,7 +86,7 @@ BBAS uses advanced machine learning algorithms to create a unique 128-dimensiona
 
 ---
 
-## 🔗 How It Works
+##  How It Works
 
 ### 1. Enrollment Phase
 
@@ -108,8 +108,8 @@ The system calculates a **weighted confidence score**. If score **≥85%**, atte
 Attendance records are saved to Firestore with timestamps, confidence scores, and behavioral metrics. Faculty can view real-time analytics through interactive charts and export data to CSV for further analysis.
 
 ---
-## 🔗 Getting Started
-### 🔗 Prerequisites
+##  Getting Started
+###  Prerequisites
 
 Before installing BBAS, ensure you have:
 
@@ -118,7 +118,7 @@ Before installing BBAS, ensure you have:
 - **[Git](https://git-scm.com/)**
 - **Firebase Account** (free Spark plan is sufficient)
 
-### 🔗 Installation & Setup
+###  Installation & Setup
 
 ### 1. Clone the Repository
 
@@ -232,7 +232,7 @@ You should see the BBAS login page! 🎉
 
 ---
 
-## 🔗 Project Structure
+##  Project Structure
 
 ```
 📂BBAS
@@ -267,7 +267,7 @@ You should see the BBAS login page! 🎉
 
 ---
 
-## 🔗 Current Limitations
+##  Current Limitations
 
 - **Internet Required** - Needs stable connection for real-time verification
 - **Desktop Optimized** - Best on laptop/desktop keyboards (mobile keyboards have different dynamics)
@@ -278,7 +278,7 @@ You should see the BBAS login page! 🎉
 ---
 
 
-## 🔗 Future Enhancements
+##  Future Enhancements
 
 We have an exciting roadmap for BBAS:
 
